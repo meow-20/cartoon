@@ -19,6 +19,13 @@ main{
     height: 100dvh;
     width: 100dvw;
     background-color: whitesmoke;
+    /* user cant select anything */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 main #zootopia{
     position: absolute;
@@ -83,6 +90,16 @@ main nav{
     justify-content: space-between;
     align-items: center;
     /* box-shadow: 0 7px 9px #00000020; */
+}
+nav select{
+    width: 6vmax;
+    height: 5vmin;
+    border: 1px outset gray;
+    border-radius: 10px;
+    background-color: #769ACE;
+}
+nav select option{
+    background-color: #a2b5d1;
 }
 .tags{
     font-family: "overwave";
@@ -167,6 +184,71 @@ nav img{
     font-family: "overwave";
     font-size: 1.5rem;
 }
+#center-hidden{
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    height: 25vmax;
+    width: 80vmin;
+    background-color: antiquewhite;
+    z-index: 11;
+    border: 1px outset gray;
+    box-shadow: -3px -3px 20px black;
+    overflow: hidden;
+    transition: all ease 0.5s;
+}
+#center-hidden i{
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    display: inline-block;
+    font-size: 4vmin;
+    cursor: pointer;
+}
+#center-hidden iframe{
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.arrow{
+    position: absolute;
+    top: 85%;
+    left: 53%;
+    transform: translate(-50%, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vmin;
+    width: 20vmin;
+}
+.arrow i{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 30%;
+    border: 2px outset gray;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px gray;
+    cursor: pointer;
+}
+.arrow i:hover{
+    transform: scale(1.1);
+}
+.arrow .left{
+    background-color: #769ACE;
+}
+.arrow .right{
+    background-color: #AEA15C;
+}
+
 
 
 @media screen and (width <= 860px) {
@@ -188,5 +270,8 @@ nav img{
     }
     .tags{
         display: none;
+    }
+    #zootopia{
+        display: none ;
     }
 }
